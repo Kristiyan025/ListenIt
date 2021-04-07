@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Yatra+One&display=swap');
+
+.listElement
+{
+    height: 3em;
+    border-right: 0 solid white;
+    display: flex;
+    align-items: center;
+}
+
+.link
+{
+    margin: 0 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.6em;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.548);
+}
+
+.link:hover
+{
+    --highlight: rgb(172, 255, 5);
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+}
+
+.normal
+{
+    font-family: 'Yatra One', cursive;
+    transform: translateY(.1em);
+}
+
+.auth
+{
+    font-family: 'Antic Slab', serif !important;
+}

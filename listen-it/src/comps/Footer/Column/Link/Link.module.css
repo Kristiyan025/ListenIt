@@ -1,0 +1,41 @@
+.listItem
+{
+    margin: 8px 0;
+}
+
+.link
+{
+    padding: 0 5px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.link:hover
+{
+    /*border-bottom: 1px solid var(--link-color);*/
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 1.1em;
+    transition: all .3s ease-in-out;
+}
+
+.link::after
+{
+    content: '';
+    position: absolute;
+    --height: 1px;
+    height: var(--height);
+    bottom: calc(-1 * (4px + var(--height)));
+    left: 50%;
+    right: 50%;
+    background-color: var(--link-color);
+    transition: inherit;
+}
+
+.link:hover::after
+{
+    left: 0;
+    right: 0;
+}

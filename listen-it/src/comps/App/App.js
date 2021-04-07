@@ -1,19 +1,20 @@
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from "../Header";
+import Footer from "../Footer";
 import Home from '../Home';
+import Error from '../Error';
 
 function App() {
-  return (
-    <Fragment>
-        <Header></Header>
-        <Router>
-          <Switch>
-            <Route path='/' exact render={Home} />
-          </Switch>          
-        </Router>
-    </Fragment>
-  );
+	return (
+		<Router>
+			<Header></Header>
+			<Switch>
+				<Route path='/' exact component={Home} />
+				<Route component={Error} />
+			</Switch> 
+			<Footer />         
+		</Router>
+	);
 }
 
 export default App;

@@ -1,0 +1,22 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+}
+
+:root 
+{
+	--site-max-width: 1200px;
+	--edge-thickness: 10px;
+	--link-color: rgb(0, 140, 255);
+	--header-color-light: rgb(250, 47, 11);
+	--header-color-dark: rgb(204, 48, 0);
+	--header-bottom-color: rgb(255, 149, 149);
+	--logo-border-color: rgb(0, 95, 158);
+	--footer-main-color: rgb(37, 37, 37);
+	--footer-edge-color: rgb(66, 66, 66);
+	--footer-text-color: wheat;
+	--footer-font: 'Josefin Sans', sans-serif;
+}

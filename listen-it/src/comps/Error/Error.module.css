@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+
+.gif
+{
+    width: 50%;
+    height: auto;
+}
+
+.message
+{
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--footer-font);
+}

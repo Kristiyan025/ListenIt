@@ -1,0 +1,33 @@
+.wrapper
+{
+    max-width: var(--site-max-width);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.flexible
+{
+	display: flex;
+	align-items: center;
+}
+
+.flexCenter
+{
+	display: flex;
+    justify-content: center;
+	align-items: center;
+}
+
+.flexBetween
+{
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+}
+
+.flexAround
+{
+	display: flex;
+    justify-content: space-around;
+	align-items: center;
+}

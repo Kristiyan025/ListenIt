@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+
+@font-face {
+    font-family: "Logo Font";
+    src: 
+      url("../../fonts/SCRIPTBL.woff") format("woff"),
+      url("../../fonts/SCRIPTBL.woff2") format("woff2"),
+      url("../../fonts/SCRIPTBL.TTF") format("truetype");
+  }
+
+.footer
+{
+    width: 100%;
+    color: var(--footer-text-color);
+    background-color: var(--footer-main-color);
+    font-family: var(--footer-font);
+}
+
+.footer::before
+{
+    content: '';
+    display: block;
+    width: 100%;
+    height: var(--edge-thickness);
+    background-color: var(--footer-edge-color);
+}
+
+.columns
+{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon
+{
+    font-size: 2em;
+    margin: 0 5px;
+}
+
+.copyrights
+{
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+
+.logo
+{
+    font-family: 'Logo Font', cursive;
+}
