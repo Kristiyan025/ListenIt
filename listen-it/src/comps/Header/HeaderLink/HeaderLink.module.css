@@ -5,6 +5,7 @@
     height: 3em;
     border-right: 0 solid white;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -13,16 +14,39 @@
     margin: 0 15px;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
     color: white;
     font-size: 1.6em;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.548);
+    position: relative;
+    --highlight: rgb(172, 255, 5);
+    transition: all .3s ease-in-out;
 }
 
 .link:hover
 {
-    --highlight: rgb(172, 255, 5);
     color: var(--highlight);
     border-bottom: 2px solid var(--highlight);
+}
+
+.link::after
+{
+    content: '';
+    position: absolute;
+    display: block;
+    --height: 2px;
+    height: var(--height);
+    bottom: 2px;
+    left: 50%;
+    right: 50%;
+    background-color: var(--highlight);
+    transition: inherit;
+}
+
+.link:hover::after
+{
+    left: 0;
+    right: 0;
 }
 
 .normal

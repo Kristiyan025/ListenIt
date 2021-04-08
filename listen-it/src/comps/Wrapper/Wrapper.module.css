@@ -31,3 +31,8 @@
     justify-content: space-around;
 	align-items: center;
 }
+
+.column
+{
+	flex-direction: column;
+}

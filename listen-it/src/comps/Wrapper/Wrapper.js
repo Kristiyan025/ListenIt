@@ -10,7 +10,9 @@ const Wrapper = (props) => {
         if(props.className.includes('flexBetween')) 
             classes.push(styles.flexBetween);       
         if(props.className.includes('flexAround')) 
-            classes.push(styles.flexAround);     
+            classes.push(styles.flexAround);         
+        if(props.className.includes('column')) 
+            classes.push(styles.column);   
     }
     let inlineStyle = {};
     for(const prop in props) {

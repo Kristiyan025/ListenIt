@@ -1,10 +1,10 @@
-import styles from '../LogIn/LogIn.module.css';
+import styles from './LogIn.module.css';
 import { Link } from 'react-router-dom';
 import { auth } from '../../user';
 import mistakes, { pushMessage } from '../../wrong';
 import Wrapper from '../Wrapper';
 
-const SignUp = ({ history }) => {
+const LogIn = ({ history }) => {
     const padding = '80px';
 
     const submitHandler = (e) => {
@@ -12,7 +12,6 @@ const SignUp = ({ history }) => {
         
         let email = e.target.email.value;
         let password = e.target.password.value;
-        let confirmPassword = e.target.confirmPassword.value;
         let isValid = true;
         
         if(!email) {
@@ -29,26 +28,19 @@ const SignUp = ({ history }) => {
                 .forEach(x => pushMessage(x));
         }
 
-        if(password !== confirmPassword) {
-            isValid = false;
-            document
-                .querySelectorAll(`.${styles.missmatchedPasswords}`)
-                .forEach(x => pushMessage(x));
-        }
-
         if(isValid) {
-            auth.createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                history.push('/');
-            })
-            .catch((error) => {
-                history.push('/sign-up');
-                document
-                    .querySelectorAll(`.${styles.unsuccessfullLog}`)
-                    .forEach(x => pushMessage(x));
-            });
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    history.push('/');
+                })
+                .catch((error) => {
+                    history.push('/log-in');
+                    document
+                        .querySelectorAll(`.${styles.unsuccessfullLog}`)
+                        .forEach(x => pushMessage(x));
+                });
         } else {
-            history.push('/sign-up');
+            history.push('/log-in');
         }
     };
 
@@ -57,13 +49,12 @@ const SignUp = ({ history }) => {
             <Wrapper className="flexCenter" paddingTop={padding} paddingBottom={padding}>
                 <form onSubmit={submitHandler} className={styles.form}>
                     <legend className={styles.tittle}>
-                        Sign Up
+                        Log In
                     </legend>
                     <hr className={styles.hr} />
                     <ul className={styles.allMistakes}>
                         <li className={styles.invalidEmail}>{mistakes.invalidEmail}</li>
                         <li className={styles.invalidPassword}>{mistakes.invalidPassword}</li>
-                        <li className={styles.missmatchedPasswords}>{mistakes.missmatchedPasswords}</li>
                         <li className={styles.unsuccessfullLog}>{mistakes.unsuccessfullLog}</li>
                     </ul>
                     <div className={styles.formGroup}>
@@ -80,20 +71,13 @@ const SignUp = ({ history }) => {
                         <input type="password" name="password" className={styles.formInput} placeholder="123456"/>
                         <span className={`${styles.mistake} ${styles.invalidPassword}`}>{mistakes.invalidPassword}</span>
                     </div>
-                    <div className={styles.formGroup}>
-                        <label htmlFor="confirmPassword" className={styles.formLabel}>
-                            Confirm Password
-                        </label>
-                        <input type="password" name="confirmPassword" className={styles.formInput} placeholder="123456"/>
-                        <span className={`${styles.mistake} ${styles.missmatchedPasswords}`}>{mistakes.missmatchedPasswords}</span>
-                    </div>
                     <button type="submit" className={styles.button}>
-                        Sign Up
+                        Log In
                     </button>
                     <hr className={styles.hr} />
                     <p className={styles.redirect}>
-                        Already have an account? <Link to="/log-in" className={styles.link}>
-                            Log In
+                        Don't have an account yet? <Link to="/sign-up" className={styles.link}>
+                            Sign Up
                         </Link>
                     </p>
                 </form>
@@ -102,4 +86,4 @@ const SignUp = ({ history }) => {
     );
 };
 
-export default SignUp;
+export default LogIn

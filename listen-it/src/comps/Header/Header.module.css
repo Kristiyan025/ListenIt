@@ -20,3 +20,20 @@
     list-style-type: none;
     display: flex;
 }
+
+
+@media only screen and (max-width: 1080px)
+{
+    .navLinks
+    {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 900px)
+{
+    .navLinks
+    {
+        flex-direction: column;
+    }
+}

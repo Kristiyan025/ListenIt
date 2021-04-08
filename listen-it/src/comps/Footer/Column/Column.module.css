@@ -1,6 +1,6 @@
 .listItem
 {
-    width: 20%;
+    width: max(20%, 200px);
     padding-top: 15px;
     display: flex;
     flex-direction: column;
@@ -12,6 +12,7 @@
     align-self: center;
     font-size: 2em;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .links

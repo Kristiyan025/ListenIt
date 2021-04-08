@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=RocknRoll+One&display=swap');
+
+.intro
+{
+    --border-shadow-offset: 30%;
+    --border-shadow-color: rgba(0, 0, 0, 0.856);
+    width: 100%;
+    background: 
+        url('../../images/home/intro-bg.jpg'), 
+        linear-gradient(to right, 
+            var(--border-shadow-color) 0%, 
+            rgba(0, 0, 0, 0) var(--border-shadow-offset), 
+            rgba(0, 0, 0, 0) calc(100% - var(--border-shadow-offset)),
+            var(--border-shadow-color) 100%),
+        linear-gradient(to top, 
+            var(--border-shadow-color) 0%, 
+            rgba(0, 0, 0, 0) var(--border-shadow-offset), 
+            rgba(0, 0, 0, 0) calc(100% - var(--border-shadow-offset)),
+            var(--border-shadow-color) 100%);
+    background-position: center;
+    background-size: 100% auto;
+    background-blend-mode: multiply;
+    color: white;
+    user-select: none;
+}
+
+.intro::after
+{
+    content: '';
+    display: block;
+    width: 100%;
+    height: var(--edge-thickness);
+    background: var(--footer-edge-color);
+}
+
+.tittle
+{
+    width: clamp(200px, 70%, var(--site-max-width));
+    padding: .3em;
+    font-size: 4em;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.226);
+    text-shadow: 
+        2px 3px 3px rgba(0, 0, 0, 0.562),
+        6px 4px 7px rgba(0, 0, 0, 0.562),
+        6px 4px 20px rgba(0, 0, 0, 0.562);
+    box-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.808),
+        inset 0 0 20px rgba(0, 0, 0, 0.63);
+    border-radius: 10% / 50%;
+}
+
+.content
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.text
+{
+    width: 50%;
+    padding: 30px 40px;
+    font-size: 2em;
+    font-family: 'RocknRoll One', sans-serif;
+    text-indent: 10%;
+    line-height: 1.2;
+    text-shadow: 
+        3px 2px 3px rgb(20, 20, 20),
+        3px 2px 10px rgba(20, 20, 20, 0.699);
+    background: rgba(0, 0, 0, 0.267);
+    border-radius: 13px / 10px;
+}
+
+.aside
+{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.link
+{
+    --highlight: wheat;
+    width: 70%;
+    height: 2em;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: var(--highlight);
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0.856);
+    border: 3px solid var(--highlight);
+    border-radius: 15% / 50%;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.637);
+    transition: all .2s ease-in-out;
+}
+
+.link:hover
+{
+    background-color: wheat;
+    --highlight: var(--logo-border-color);
+}
+
+@media only screen and (max-width: 900px)
+{
+    .content
+    {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 720px)
+{
+    .tittle,
+    .text
+    {
+        font-size: 2em;
+    }
+    
+    .text
+    {
+        font-size: 1.2em;
+    }
+
+    .link
+    {
+        font-size: 2em;
+    }
+}

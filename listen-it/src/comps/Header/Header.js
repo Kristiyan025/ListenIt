@@ -2,29 +2,54 @@ import styles from './Header.module.css';
 import Wrapper from "../Wrapper";
 import HeaderLink from './HeaderLink';
 import Logo from '../Logo';
+import { Fragment } from 'react';
 
-const Header = () => {
-    let padding = '10px';
+const Header = ({ user }) => {
+    const padding = '10px';
+
+    const isLoggedIn = user !== '';
+console.log(window.innerWidth);
     return (
         <header className={styles.header}>
-            <Wrapper className="flexBetween" paddingTop={padding} paddingBottom={padding}>
+            <Wrapper className={`flexBetween ${window.innerWidth <= 1080 ? 'column' : ''}`} paddingTop={padding} paddingBottom={padding}>
                 <Logo />
                 <ul className={styles.navLinks}>
-                    <HeaderLink to="/">
-                        My Playlists
-                    </HeaderLink>
-                    <HeaderLink to="/">
+                    { isLoggedIn ? (
+                        <Fragment>
+                            <HeaderLink to="/my-playlists">
+                                My Playlists
+                            </HeaderLink>
+                            <HeaderLink to="/history">
+                                History
+                            </HeaderLink>                            
+                        </Fragment>) : ''}
+                    <HeaderLink to="/about-us">
                         About Us
                     </HeaderLink>
-                    <HeaderLink to="/" borderRightWidth="2px">
+                    <HeaderLink to="/contacts" borderRightWidth="2px">
                         Contacts
                     </HeaderLink>
-                    <HeaderLink to="/" auth="true">
-                        Log In
-                    </HeaderLink>
-                    <HeaderLink to="/" auth="true">
-                        Sign Up
-                    </HeaderLink>
+                    { isLoggedIn ? (
+                        <Fragment>
+                            <HeaderLink to="/" auth="true">
+                                {user.split('@')[0]}
+                            </HeaderLink>   
+                            <HeaderLink to="/" auth="true">
+                                <img />
+                            </HeaderLink>                            
+                            <HeaderLink to="/log-out" auth="true">
+                                Log Out
+                            </HeaderLink>
+                        </Fragment>) : (
+                        <Fragment>
+                            <HeaderLink to="/log-in" auth="true">
+                                Log In
+                            </HeaderLink>
+                            <HeaderLink to="/sign-up" auth="true">
+                                Sign Up
+                            </HeaderLink> 
+                        </Fragment> 
+                    )}
                 </ul>                
             </Wrapper>
         </header>

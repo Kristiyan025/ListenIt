@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+.section
+{
+    --border-shadow-offset: 30%;
+    --border-shadow-color: rgba(0, 0, 0, 0.452);
+    width: 100%;
+    background: 
+        url('../../images/user/form-bg.jpg'), 
+        linear-gradient(to right, 
+            var(--border-shadow-color) 0%, 
+            rgba(0, 0, 0, 0) var(--border-shadow-offset), 
+            rgba(0, 0, 0, 0) calc(100% - var(--border-shadow-offset)),
+            var(--border-shadow-color) 100%),
+        linear-gradient(to top, 
+            var(--border-shadow-color) 0%, 
+            rgba(0, 0, 0, 0) var(--border-shadow-offset), 
+            rgba(0, 0, 0, 0) calc(100% - var(--border-shadow-offset)),
+            var(--border-shadow-color) 100%);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    --dark-color: rgb(22, 22, 22);
+    color: var(--dark-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.form
+{
+    width: min(max(calc(0.5 * var(--site-max-width)), 60%), 100%);
+    font-size: 1.4em;
+    --mistake-color: red;
+}
+
+.tittle
+{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 4em;
+}
+
+.hr
+{
+    display: block;
+    width: 80%;
+    height: 1px;
+    margin: 10px auto 20px;
+    background: rgba(12, 12, 12, 0.884);
+
+}
+
+.allMistakes
+{
+    margin-bottom: 20px;
+}
+
+.allMistakes li
+{
+    margin: 5px 0;
+    margin-left: 25px;
+    color: var(--mistake-color);
+}
+
+.formGroup
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    --field-width: max(60%, calc(0.25 * var(--site-max-width)));
+    --field-gap: 2%;
+}
+
+.formLabel,
+.formInput
+{
+    box-sizing: border-box;
+    --font-size: 1.2em;
+    margin: 10px 0;
+    font-size: var(--font-size);
+    display: flex;
+    align-items: center;
+}
+
+.formLabel
+{
+    max-width: calc(100% - var(--field-width) - var(--field-gap));
+    width: 100%;
+    margin-top: 15px;
+}
+
+.formInput
+{
+    max-width: var(--field-width);
+    width: 100%;
+    --padding: 10px;
+    --height: calc(var(--font-size) + var(--padding));
+    max-height: var(--height);
+    padding: var(--padding);
+    border-radius: calc(0.5 * var(--height));
+    border: 1px solid var(--dark-color);
+    outline: none;
+    background: rgba(255, 255, 255, 0.158);
+    backdrop-filter: blur(10px);
+}
+
+.formInput::placeholder
+{
+    color: rgba(0, 0, 0, 0.555);
+}
+
+.formInput:focus
+{
+    background: rgba(255, 255, 255, 0.842);
+}
+
+.mistake
+{
+    width: 90%;
+    margin: 0 auto;
+    color: var(--mistake-color);
+    text-align: end;
+    text-transform: none;
+}
+
+.button
+{
+    margin: 25px auto;
+    width: max(40%, calc(var(--site-max-width) / 4));
+    --font-size: 2em;
+    --height: calc(1.4 * var(--font-size));
+    height: var(--height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size);
+    border-radius: calc(0.5 * var(--height));
+    border: 3px solid white;
+    outline: none;
+    color: white;
+    backdrop-filter: blur(10px);
+    background:rgba(0, 0, 0, 0.397);
+    transition: all .1s ease-in-out;
+}
+
+.button:hover
+{
+    background:rgba(255, 255, 255, 0.541);
+    --highlight: rgba(14, 14, 14, 0.781); 
+    color: var(--highlight);
+    border-color: var(--highlight);
+}
+
+.button:active
+{
+    color: var(--link-color);
+}
+
+.redirect
+{
+    text-align: center;
+}
+
+.link
+{
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+    transition: all .1s ease-in-out;
+}
+
+.link:hover
+{
+    color: var(--link-color);
+    font-weight: 400;
+}
+
+.invalidEmail,
+.invalidPassword,
+.missmatchedPasswords,
+.unsuccessfullLog
+{
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: all .1s ease-in-out;
+}
