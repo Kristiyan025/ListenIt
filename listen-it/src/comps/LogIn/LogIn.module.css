@@ -85,6 +85,7 @@
 
 .formLabel
 {
+    min-width: 180px;
     max-width: calc(100% - var(--field-width) - var(--field-gap));
     width: 100%;
     margin-top: 15px;
@@ -185,4 +186,28 @@
     height: 0;
     overflow: hidden;
     transition: all .1s ease-in-out;
+}
+
+@media only screen and (max-width: 500px)
+{
+    .formGroup
+    {
+        justify-content: center;
+    }
+
+    .button
+    {
+        width: auto;
+        --font-size: 1.6em;
+        --height: calc(1.4 * var(--font-size));
+        border-radius: 25% / 50%;
+        padding: .3em;
+    }
+
+    .formInput
+    {
+        --horizontal-margin: 40px;
+        margin-left: var(--horizontal-margin);
+        margin-right: var(--horizontal-margin);
+    }
 }

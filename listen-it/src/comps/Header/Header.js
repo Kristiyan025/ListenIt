@@ -3,12 +3,12 @@ import Wrapper from "../Wrapper";
 import HeaderLink from './HeaderLink';
 import Logo from '../Logo';
 import { Fragment } from 'react';
+import profilePic from '../../images/profile/sample-01.png';
 
 const Header = ({ user }) => {
     const padding = '10px';
-
     const isLoggedIn = user !== '';
-console.log(window.innerWidth);
+    
     return (
         <header className={styles.header}>
             <Wrapper className={`flexBetween ${window.innerWidth <= 1080 ? 'column' : ''}`} paddingTop={padding} paddingBottom={padding}>
@@ -31,12 +31,10 @@ console.log(window.innerWidth);
                     </HeaderLink>
                     { isLoggedIn ? (
                         <Fragment>
-                            <HeaderLink to="/" auth="true">
+                            <HeaderLink to="/" auth="true" profilePic="true" width='130px' alignSelf="center">
                                 {user.split('@')[0]}
-                            </HeaderLink>   
-                            <HeaderLink to="/" auth="true">
-                                <img />
-                            </HeaderLink>                            
+                                <img className={styles.profilePic} src={profilePic} alt="Profile Pic" />
+                            </HeaderLink>                           
                             <HeaderLink to="/log-out" auth="true">
                                 Log Out
                             </HeaderLink>

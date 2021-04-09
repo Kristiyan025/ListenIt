@@ -51,28 +51,28 @@ const Footer = () => {
                         </Link>
                     </Column>
                     <Column name="Follow us on:" className="icons">
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-facebook-f'}></i>
                         </Link>
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-instagram'}></i>
                         </Link>
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-twitter'}></i>
                         </Link>
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-linkedin'}></i>
                         </Link>
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-pinterest'}></i>
                         </Link>
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-google-plus'}></i>
                         </Link>
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-youtube'}></i>
                         </Link>
-                        <Link to="/">
+                        <Link to="/media">
                             <i className={styles.icon + ' fa fa-reddit'}></i>
                         </Link>
                     </Column>

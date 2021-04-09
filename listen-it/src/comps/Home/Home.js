@@ -11,7 +11,6 @@ const Home = ({ user }) => {
         'The All Time Music Hits',
         'Popular Official Music Videos',//*/
     ];
-    let counter = 0;
 
     return (
         <Fragment>
@@ -20,7 +19,7 @@ const Home = ({ user }) => {
                 Music Collections
             </h1>
             <Suspense fallback={<div>Loading...</div>}>
-                {galleries.map(x => <VideoGallery key={counter++} tittle={x} />)}
+                {galleries.map((x, index) => <VideoGallery key={index} tittle={x} />)}
             </Suspense>            
         </Fragment>
     );

@@ -9,7 +9,7 @@ const Video = (props) => {
     
     return (
         <li className={styles.video} style={{
-            width: 'calc(' + space + '% - 2 * ' + margin + ')',
+            width: (window.innerWidth <= 1080 ? '200px' : 'calc(' + space + '% - 2 * ' + margin + ')'),
             margin: '0 ' + margin,
             }}>
             <Link className={styles.link} to={`/video/${props.video?.id?.videoId}`}>

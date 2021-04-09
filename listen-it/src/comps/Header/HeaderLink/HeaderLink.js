@@ -7,7 +7,8 @@ const HeaderLink = (props) => {
         if(!['className', 'children', 'auth'].includes(prop)) inlineStyle[prop] = props[prop];
     }
     return (
-        <li className={styles.listElement + (props.auth ? ` ${styles.auth}` : ` ${styles.normal}`)} style={inlineStyle}>
+        <li className={styles.listElement + 
+        (props.auth ? ` ${styles.auth}` : ` ${styles.normal}`)} style={inlineStyle}>
             <Link to={props.to} className={styles.link}>
                 {props.children}
             </Link>
