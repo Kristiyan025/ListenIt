@@ -8,9 +8,12 @@ const request = async (url, options) => {
     return data;
 }
 
-const apiKey = 'AIzaSyCWAQkla6nyj6b4bMIH8vIutRIE9jSEgn8';
+//const apiKey = 'AIzaSyCWAQkla6nyj6b4bMIH8vIutRIE9jSEgn8';
+const apiKey = 'AIzaSyBcuBOrDBmVZ9LGeyOgCaJWbHvPkSOX2Uo';
 
-const searchUrl = (kewords = 'music', type = 'video', maxResults = 25) => `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${kewords.replaceAll(' ', '%20')}&type=${type}&videoDimension=2d&key=${apiKey}\n&Authorization=Bearer ${apiKey}&Accept=application/json`;
+const searchUrl = (kewords, type, maxResults, videoId) => `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${kewords.replaceAll(' ', '%20')}${videoId !== '' ? `&relatedToVideoId=${videoId}` : ''}&type=${type}&videoDimension=2d&key=${apiKey}\n&Authorization=Bearer ${apiKey}&Accept=application/json`;
+
+const getVideo = (videoId) => `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}\n&Authorization=Bearer ${apiKey}&Accept=application/json`;
 
 const options = {
     'method': 'GET',
@@ -20,18 +23,18 @@ const options = {
     }
 };
 
-const useSearch = (initial, kewords = 'music', type = 'video', maxResults = 25) => {
+const useSearch = (initial, videoId, kewords = 'music', maxResults = 25, type = 'video') => {
     const [state, setState ] = useState(initial);
     const [ isLoading, setIsLoading ] = useState(false);
 
     useEffect(() => {
         setIsLoading(true);
-        request(searchUrl(kewords, type, maxResults), options)
+        request(searchUrl(kewords, type, maxResults, videoId), options)
             .then(res => {
                 setState(res);
                 setIsLoading(false);
             })
-    }, [ kewords, type, maxResults ]);
+    }, [ videoId, kewords, maxResults, type ]);
 
     return [
         state,
@@ -39,6 +42,28 @@ const useSearch = (initial, kewords = 'music', type = 'video', maxResults = 25) 
     ]
 };
 
-export {
-    useSearch
+const useVideo = (initial, videoId) => {
+    const [state, setState ] = useState(initial);
+    const [ isLoading, setIsLoading ] = useState(false);
+
+    useEffect(() => {
+        setIsLoading(true);
+        request(getVideo(videoId), options)
+            .then(res => {
+                setState(res?.items?.[0]);
+                setIsLoading(false);
+            })
+    }, [ videoId ]);
+
+    return [
+        state,
+        isLoading,
+    ]
 };
+
+export default useSearch;
+
+export {
+    useSearch,
+    useVideo,
+}

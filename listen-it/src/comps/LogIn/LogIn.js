@@ -1,6 +1,6 @@
 import styles from './LogIn.module.css';
 import { Link } from 'react-router-dom';
-import { auth } from '../../user';
+import { auth } from '../../utils/user';
 import mistakes, { pushMessage } from '../../wrong';
 import Wrapper from '../Wrapper';
 

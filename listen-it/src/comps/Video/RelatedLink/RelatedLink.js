@@ -1,8 +1,7 @@
-import styles from './Video.module.css';
+import styles from './RelatedLink.module.css';
 import { Link } from 'react-router-dom';
 
-const Video = (props) => {
-    const space = 100.0 / props.len;
+const RelatedLink = (props) => {
     const margin = '5px';
 
     const id = props.video?.id?.videoId;
@@ -13,25 +12,26 @@ const Video = (props) => {
     
     return (
         <li className={styles.video} style={{
-            width: (window.innerWidth <= 1080 ? '200px' : 'calc(' + space + '% - 2 * ' + margin + ')'),
             margin: '0 ' + margin,
             }}>
             <Link className={styles.link} to={`/video/${id}`}>
                 <img className={styles.thumbnail} src={thumbnail} alt="Video Thumbnail"/>
-                <div className={styles.titleContainer}>
-                    <h2 className={styles.title}>
-                        {title}
-                    </h2>                    
+                <div className={styles.container}>
+                    <div className={styles.titleContainer}>
+                        <h2 className={styles.title}>
+                            {title}
+                        </h2>                          
+                    </div>
+                    <h3 className={styles.channel}>
+                        By: {channel}
+                    </h3>
+                    <h4 className={styles.date}>
+                        {date}
+                    </h4>                  
                 </div>
-                <h3 className={styles.channel}>
-                    By: {channel}
-                </h3>
-                <h4 className={styles.date}>
-                    {date}
-                </h4>
             </Link>
         </li>
     );
 };
 
-export default Video;
+export default RelatedLink;

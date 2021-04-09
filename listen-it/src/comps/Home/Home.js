@@ -4,7 +4,7 @@ import { Fragment, Suspense } from 'react';
 import Intro from '../Intro/Intro';
 
 const Home = ({ user }) => {
-    const galleries = [/*
+    const galleries = [//*
         `${new Date().getFullYear()} Top Hits`,
         'Rap Music Videos',
         'Dance Music Videos',

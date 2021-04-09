@@ -1,0 +1,71 @@
+.video::after
+{
+    content: '';
+    display: block;
+    width: 90%;
+    height: 1px;
+    margin: 15px auto;
+    background: rgb(10, 10, 10);
+}
+
+.link
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    color: rgb(15, 15, 15);
+    --height: 100px;
+}
+
+.thumbnail
+{
+    width: calc( 320.0 / 180 * var(--height));
+    height:  var(--height);
+    border-radius: 6px / 5px;
+}
+
+.container
+{
+    width: min(50%, calc(100% - var(--height)));
+    margin-top: 10px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+.titleContainer
+{
+    height: 3em;
+    overflow: hidden;
+}
+
+.title
+{
+    height: 100%;
+    font-size: 1.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.channel
+{
+    height: 2em;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.date
+{
+    font-size: .9em;
+    font-weight: 400;
+    text-align: end;
+    color: rgb(78, 78, 78);
+}
+
+@media only screen and (max-width: 1080px)
+{
+
+}
