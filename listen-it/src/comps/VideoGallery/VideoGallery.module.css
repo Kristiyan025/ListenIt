@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-.tittle
+.title
 {
     margin-left: 5%;
     margin-bottom: 20px;
@@ -75,7 +75,7 @@
 
 @media only screen and (max-width: 1200px)
 {
-    .tittle
+    .title
     {
         margin: 10px 0;
         text-align: center;

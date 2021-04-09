@@ -48,7 +48,7 @@ const LogIn = ({ history }) => {
         <section className={styles.section}>
             <Wrapper className="flexCenter" paddingTop={padding} paddingBottom={padding}>
                 <form onSubmit={submitHandler} className={styles.form}>
-                    <legend className={styles.tittle}>
+                    <legend className={styles.title}>
                         Log In
                     </legend>
                     <hr className={styles.hr} />

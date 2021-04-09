@@ -14,7 +14,7 @@ const Intro = ({ user }) => {
                 flexDirection="column" 
                 paddingTop={padding} 
                 paddingBottom={padding}>
-                <h1 className={styles.tittle}>
+                <h1 className={styles.title}>
                     Listen It - One of the biggest online music community!
                 </h1>
                 <section className={styles.content}>

@@ -19,7 +19,7 @@ const Home = ({ user }) => {
                 Music Collections
             </h1>
             <Suspense fallback={<div>Loading...</div>}>
-                {galleries.map((x, index) => <VideoGallery key={index} tittle={x} />)}
+                {galleries.map((x, index) => <VideoGallery key={index} title={x} />)}
             </Suspense>            
         </Fragment>
     );

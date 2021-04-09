@@ -14,8 +14,8 @@ const Video = (props) => {
             }}>
             <Link className={styles.link} to={`/video/${props.video?.id?.videoId}`}>
                 <img className={styles.thumbnail} src={props.video?.snippet?.thumbnails?.medium?.url} alt="Video Thumbnail"/>
-                <div className={styles.tittleContainer}>
-                    <h2 className={styles.tittle}>
+                <div className={styles.titleContainer}>
+                    <h2 className={styles.title}>
                         {props.video?.snippet?.title}
                     </h2>                    
                 </div>

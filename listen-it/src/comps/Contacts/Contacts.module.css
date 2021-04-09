@@ -1,0 +1,64 @@
+.title
+{
+    text-align: center;
+    font-size: 5em;
+}
+
+.contacts 
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 80px;
+}
+
+.streetView 
+{
+    width: 30%;
+    height: auto;
+    border: 10px inset #507eff;
+    border-radius: 30px;
+}
+
+.data
+{
+    --font-size: 27px;
+    width: 50%;
+    height: calc(8 * var(--font-size));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info 
+{
+    display: inherit;
+    font-size: var(--font-size);
+    word-wrap: break-word;
+    font-family: var(--header-font);
+}
+
+.info span
+{
+    margin-left: 10px;
+    font-style: italic;
+}
+
+.info span a
+{
+    color: var(--link-color);
+    transition: all .3s ease-in-out;
+}
+
+.info span a:hover
+{
+    color: var(--logo-border-color);
+}
+
+.map 
+{
+    width: 80%;
+    height: 30rem;
+    margin: 30px auto;
+}

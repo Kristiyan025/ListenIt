@@ -56,7 +56,7 @@ const SignUp = ({ history }) => {
         <section className={styles.section}>
             <Wrapper className="flexCenter" paddingTop={padding} paddingBottom={padding}>
                 <form onSubmit={submitHandler} className={styles.form}>
-                    <legend className={styles.tittle}>
+                    <legend className={styles.title}>
                         Sign Up
                     </legend>
                     <hr className={styles.hr} />

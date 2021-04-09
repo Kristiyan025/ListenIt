@@ -1,6 +1,7 @@
 .listItem
 {
     width: max(20%, 200px);
+    margin-bottom: 30px;
     padding-top: 15px;
     display: flex;
     flex-direction: column;

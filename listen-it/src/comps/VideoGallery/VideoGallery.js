@@ -31,8 +31,8 @@ const VideoGallery = (props) => {
     return (
         <Wrapper className="flexCenter" paddingTop={padding} paddingBottom={padding}>
             <section className={styles.gallery}>
-                    <h2 className={styles.tittle}>
-                        {props.tittle}
+                    <h2 className={styles.title}>
+                        {props.title}
                     </h2>
                     <section className={styles.content}>
                         <button className={styles.leftBtn} onClick={leftButtonClickHandler}>&#9001;</button>

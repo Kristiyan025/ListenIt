@@ -33,7 +33,7 @@
     background: var(--footer-edge-color);
 }
 
-.tittle
+.title
 {
     width: clamp(200px, 70%, var(--site-max-width));
     padding: .3em;
@@ -113,20 +113,26 @@
 {
     .content
     {
-        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+
+    .text
+    {
+        width: 80%;
+        margin-top: 40px;
     }
 }
 
 @media only screen and (max-width: 720px)
 {
-    .tittle,
-    .text
+    .title
     {
         font-size: 2em;
     }
     
     .text
     {
+        width: 80%;
         font-size: 1.2em;
     }
 
