@@ -9,7 +9,7 @@ const Video = (props) => {
     const thumbnail = video?.snippet?.thumbnails?.medium?.url;
     const title = video?.snippet?.title;
     const channel = video?.snippet?.channelTitle;
-    const date = video?.snippet?.publishTime?.substr(0, props.video.snippet.publishTime.indexOf('T'));
+    const date = video?.snippet?.publishedAt?.substr(0, video?.snippet?.publishedAt?.indexOf('T'));
 
     const onErrorHandler = (e) => {
         e.target.src = 'video?.snippet?.thumbnails?.default?.url';
