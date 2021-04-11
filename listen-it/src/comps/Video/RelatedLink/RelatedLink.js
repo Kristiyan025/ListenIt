@@ -15,9 +15,7 @@ const RelatedLink = (props) => {
     };
 
     return (
-        <li className={styles.video} style={{
-            margin: '0 ' + margin,
-            }}>
+        <li className={styles.video} style={{ margin: '0 ' + margin, }}>
             <Link className={styles.link} to={`/video/${id}`}>
                 <img className={styles.thumbnail} src={thumbnail} alt="Video Thumbnail" onError={onErrorHandler} />
                 <div className={styles.container}>

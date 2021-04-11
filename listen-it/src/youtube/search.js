@@ -15,7 +15,7 @@ const request = async (url, options) => {
     return undefined;
 }
 
-const apiKey = 'AIzaSyC3KP4tGAdqv9mOWsm9T-WS80v7-s0RUOI';
+const apiKey = 'AIzaSyCXhKcQxP_AEyJyGTiGJ3KTob6NPdUvyCk';
 
 const searchUrl = (kewords, type, maxResults, videoId) => `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${kewords.replaceAll(' ', '%20')}${videoId !== '' ? `&relatedToVideoId=${videoId}` : ''}&type=${type}&videoDimension=2d&key=${apiKey}\n&Authorization=Bearer ${apiKey}&Accept=application/json`;
 

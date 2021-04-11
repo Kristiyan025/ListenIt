@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import Home from '../Home';
 import Video from '../Video';
 import History from '../History';
+import AboutUs from '../AboutUs';
 import Contacts from '../Contacts';
 import SignUp from '../SignUp';
 import LogIn from '../LogIn';
@@ -21,6 +22,7 @@ function App() {
 				<Route path='/' exact render={() => (<Home user={user} />)} />
 				<Route path='/video/:id' exact render={() => <Video user={user} />} />
 				<Route path='/history' exact render={() => <History user={user} />} />
+				<Route path='/about-us' exact component={AboutUs} />
 				<Route path='/contacts' exact component={Contacts} />
 				<Route path='/sign-up' exact component={SignUp} />
 				<Route path='/log-in' exact component={LogIn} />

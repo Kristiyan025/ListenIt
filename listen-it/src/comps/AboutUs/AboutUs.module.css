@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+.section
+{
+    --border-shadow-offset: 30%;
+    --border-shadow-color: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    padding: 80px 0;
+    background: 
+        url('../../images/about-us/section-bg.jpg'), 
+        linear-gradient(to right, 
+            var(--border-shadow-color) 0%, 
+            rgba(0, 0, 0, 0) var(--border-shadow-offset), 
+            rgba(0, 0, 0, 0) calc(100% - var(--border-shadow-offset)),
+            var(--border-shadow-color) 100%),
+        linear-gradient(to top, 
+            var(--border-shadow-color) 0%, 
+            rgba(0, 0, 0, 0) var(--border-shadow-offset), 
+            rgba(0, 0, 0, 0) calc(100% - var(--border-shadow-offset)),
+            var(--border-shadow-color) 100%);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    color: white;
+    font-family: 'RocknRoll One', sans-serif;
+    user-select: none;
+}
+
+.title
+{
+    margin: 0 auto 40px;
+    font-size: 3em;
+    text-align: center;
+}
+
+.container
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text
+{
+    width: 50%;
+    text-indent: 40px;
+    font-size: 1.8em;
+    word-wrap: break-word;
+    text-shadow: 3px 2px 2px rgb(58, 58, 58);
+}
+
+.graphics
+{
+    width: 45%;
+    position: relative;
+}
+
+.graphics::before
+{
+    content: '';
+    display: block;
+    --size: 23em;
+    width: var(--size);
+    height: var(--size);
+    margin: auto;
+    --color: var(--link-color);
+    background: var(--color);
+    border-radius: 50%;
+    border: 1em solid white;
+    box-shadow: 
+        0 0 0 1em var(--color),
+        6px 8px 130px 0 rgba(0, 0, 0, 0.774),
+        inset 0 0 7em rgba(0, 0, 0, 0.574);
+}
+
+.icon
+{
+    font-size: 5em;
+    position: absolute;
+    text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.397);
+}
+
+.icon:nth-child(1)
+{
+    top: 20%;
+    left:30%;
+    color: red;
+}
+
+.icon:nth-child(2)
+{
+    top: 50%;
+    left:60%;
+    color: lawngreen;
+}
+
+.icon:nth-child(3)
+{
+    top: 80%;
+    left:45%;
+    color: cyan;
+}
+
+.icon:nth-child(4)
+{
+    top: 23%;
+    left:80%;
+    color: pink;
+}
+
+.icon:nth-child(5)
+{
+    top: 10%;
+    left:50%;
+    color: peru;
+}
+
+.icon:nth-child(6)
+{
+    top: 50%;
+    left:25%;
+    color:rebeccapurple;
+}
+
+.icon:nth-child(7)
+{
+    top: 2%;
+    left:85%;
+    color: yellow;
+}
+
+.icon:nth-child(8)
+{
+    top: 65%;
+    left:85%;
+    color: grey;
+}
+
+.icon:nth-child(9)
+{
+    top: 85%;
+    left:10%;
+    color: plum;
+}
+
+@media only screen and (max-width: 1200px)
+{
+    .container
+    {
+        flex-direction: column-reverse;
+    }
+
+    .text
+    {
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    .graphics
+    {
+        margin: 30px auto;
+    }
+}
