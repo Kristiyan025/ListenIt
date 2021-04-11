@@ -73,7 +73,7 @@
     font-size: var(--font-size);
     text-overflow: ellipsis;
     max-height: calc(7.5 * var(--font-size));
-    overflow: hidden;
+    overflow: auto;
 }
 
 .bold

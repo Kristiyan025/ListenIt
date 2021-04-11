@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react';
 
 const request = async (url, options) => {
-    let response = await fetch(url, options);
+    try {
+        let response = await fetch(url, options);
 
-    let data = await response.json();
+        let data = await response.json();
 
-    return data;
+        return data;        
+    }
+    catch(err) {
+        //console.log(err);
+    }
+
+    return undefined;
 }
 
-//const apiKey = 'AIzaSyCWAQkla6nyj6b4bMIH8vIutRIE9jSEgn8';
-const apiKey = 'AIzaSyBcuBOrDBmVZ9LGeyOgCaJWbHvPkSOX2Uo';
+const apiKey = 'AIzaSyC3KP4tGAdqv9mOWsm9T-WS80v7-s0RUOI';
 
 const searchUrl = (kewords, type, maxResults, videoId) => `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${kewords.replaceAll(' ', '%20')}${videoId !== '' ? `&relatedToVideoId=${videoId}` : ''}&type=${type}&videoDimension=2d&key=${apiKey}\n&Authorization=Bearer ${apiKey}&Accept=application/json`;
 
@@ -19,7 +25,8 @@ const options = {
     'method': 'GET',
     'headers': {
         'Authorization': 'Basic Og==',
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Cache-Control': 'public',
     }
 };
 
@@ -33,6 +40,9 @@ const useSearch = (initial, videoId, kewords = 'music', maxResults = 25, type = 
             .then(res => {
                 setState(res);
                 setIsLoading(false);
+            })
+            .catch(err => {
+                //console.log(err);
             })
     }, [ videoId, kewords, maxResults, type ]);
 
@@ -52,6 +62,9 @@ const useVideo = (initial, videoId) => {
             .then(res => {
                 setState(res?.items?.[0]);
                 setIsLoading(false);
+            })
+            .catch(err => {
+                //console.log(err);
             })
     }, [ videoId ]);
 

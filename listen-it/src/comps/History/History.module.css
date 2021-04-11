@@ -1,0 +1,22 @@
+.section
+{
+    width: 100%;
+}
+
+.title
+{
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.list
+{
+    list-style: none;
+}
+
+.empty
+{
+    font-size: 2em;
+    color: rgb(41, 41, 41);
+}

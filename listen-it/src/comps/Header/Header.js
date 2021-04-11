@@ -16,9 +16,9 @@ const Header = ({ user }) => {
                 <ul className={styles.navLinks}>
                     { isLoggedIn ? (
                         <Fragment>
-                            <HeaderLink to="/my-playlists">
+                            {/*<HeaderLink to="/my-playlists">
                                 My Playlists
-                            </HeaderLink>
+                            </HeaderLink>*/}
                             <HeaderLink to="/history">
                                 History
                             </HeaderLink>                            
@@ -31,7 +31,7 @@ const Header = ({ user }) => {
                     </HeaderLink>
                     { isLoggedIn ? (
                         <Fragment>
-                            <HeaderLink to="/" auth="true" profilePic="true" width='130px' alignSelf="center">
+                            <HeaderLink to="/" auth="true" profilePic="true" width='200px' alignSelf="center">
                                 {user.split('@')[0]}
                                 <img className={styles.profilePic} src={profilePic} alt="Profile Pic" />
                             </HeaderLink>                           

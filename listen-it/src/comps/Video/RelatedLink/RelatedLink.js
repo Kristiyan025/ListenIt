@@ -10,12 +10,16 @@ const RelatedLink = (props) => {
     const channel = props.video?.snippet?.channelTitle;
     const date = props.video?.snippet?.publishTime?.substr(0, props.video.snippet.publishTime.indexOf('T'));
     
+    const onErrorHandler = (e) => {
+        e.target.src = 'props.video?.snippet?.thumbnails?.default?.url';
+    };
+
     return (
         <li className={styles.video} style={{
             margin: '0 ' + margin,
             }}>
             <Link className={styles.link} to={`/video/${id}`}>
-                <img className={styles.thumbnail} src={thumbnail} alt="Video Thumbnail"/>
+                <img className={styles.thumbnail} src={thumbnail} alt="Video Thumbnail" onError={onErrorHandler} />
                 <div className={styles.container}>
                     <div className={styles.titleContainer}>
                         <h2 className={styles.title}>

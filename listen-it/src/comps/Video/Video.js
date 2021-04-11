@@ -1,15 +1,18 @@
 import styles from './Video.module.css';
 import { useParams } from "react-router-dom";
 import { useSearch, useVideo } from '../../youtube/search';
+import useAddHistory from '../../utils/useAddHistory';
 import Wrapper from '../Wrapper';
 import RelatedLink from './RelatedLink';
 
-const Video = () => {
+const Video = (props) => {
     const padding = '50px';
     const count = 15;
     const { id } = useParams();
     const [ video/*, isLoading*/ ] = useVideo({}, id);
     const [ relatedVideos/*, isLoading*/ ] = useSearch({}, id, video?.snippet?.title, count);
+
+    useAddHistory(id, props.user);
 
     let videos = relatedVideos?.items?.map(x => <RelatedLink key={x.id?.videoId} video={x} />);
 
